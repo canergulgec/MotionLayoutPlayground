@@ -1,3 +1,3 @@
 # MotionLayoutPlayground
 
-![](motionlayout.gif)
+![](/art/motionlayout.gif)
