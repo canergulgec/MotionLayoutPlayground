@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="2000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:rotation="60"
+                motion:framePosition="50"
+                motion:motionTarget="@id/label" />
+
+            <KeyPosition
+                motion:framePosition="25"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/label"
+                motion:percentX="0.55"
+                motion:percentY="0.65" />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorGray" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivProfile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/ivProfile" />
+
+        <Constraint
+            android:id="@+id/contactContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            motion:layout_constraintEnd_toEndOf="@id/label"
+            motion:layout_constraintStart_toStartOf="@id/label"
+            motion:layout_constraintTop_toBottomOf="@id/label" />
+
+        <Constraint
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:alpha="1.0"
+            motion:layout_constraintStart_toStartOf="@id/background"
+            motion:layout_constraintTop_toTopOf="@id/background" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            motion:layout_constraintBottom_toBottomOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorDarkGray" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivProfile"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/margin_8"
+            motion:layout_constraintBottom_toBottomOf="@id/background"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/background" />
+
+        <Constraint
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            motion:layout_constraintBottom_toBottomOf="@id/ivProfile"
+            motion:layout_constraintStart_toEndOf="@id/ivProfile"
+            motion:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+        <Constraint
+            android:id="@+id/contactContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8"
+            motion:layout_constraintBottom_toBottomOf="@id/background"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/background" />
+
+        <Constraint
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:alpha="0.0"
+            motion:layout_constraintStart_toStartOf="@id/background"
+            motion:layout_constraintTop_toTopOf="@id/background" />
+
+    </ConstraintSet>
+</MotionScene>
